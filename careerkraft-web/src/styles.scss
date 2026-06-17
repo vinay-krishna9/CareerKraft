@@ -1,1 +1,118 @@
 @use 'tailwindcss';
+
+:root {
+  // TODO: Decide on a color palette and update these variables accordingly
+  --ck-primary: #2563eb;
+  --ck-primary-hover: #1d4ed8;
+
+  --ck-text-primary: #0f172a;
+  --ck-text-secondary: #475569;
+
+  --ck-border: #e2e8f0;
+
+  --ck-background: #f8fafc;
+  --ck-surface: #ffffff;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: var(--ck-text-primary);
+  background-color: var(--ck-background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 64px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 52px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.error {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.caption {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.link {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  text-decoration: none;
+}
+
+.primary-button {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0;
+  padding: 5px 32px;
+  cursor: pointer;
+
+  &:hover {
+    color: #f5d061;
+    transition: 0.5s all;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 1rem;
+  margin-right: 6px;
+}
+
+.scroll {
+  scrollbar-color: var(--ck-primary) transparent;
+  scrollbar-width: thin;
+}
