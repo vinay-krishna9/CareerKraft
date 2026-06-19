@@ -1,0 +1,111 @@
+<form
+  class="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+  [formGroup]="personalInfoForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div>
+    <h2 class="text-lg font-semibold text-slate-900">Personal Information</h2>
+    <p class="mt-1 text-sm text-slate-600">
+      Add the contact details shown at the top of your resume.
+    </p>
+  </div>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">First name</span>
+      <input
+        type="text"
+        formControlName="firstName"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Last name</span>
+      <input
+        type="text"
+        formControlName="lastName"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Title</span>
+      <input
+        type="text"
+        formControlName="title"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Email</span>
+      <input
+        type="email"
+        formControlName="email"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Phone</span>
+      <input
+        type="text"
+        formControlName="phone"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Location</span>
+      <input
+        type="text"
+        formControlName="location"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">LinkedIn</span>
+      <input
+        type="url"
+        formControlName="linkedin"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Xing</span>
+      <input
+        type="url"
+        formControlName="xing"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">GitHub</span>
+      <input
+        type="url"
+        formControlName="github"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+
+    <label class="block">
+      <span class="text-sm font-medium text-slate-700">Portfolio</span>
+      <input
+        type="url"
+        formControlName="portfolio"
+        class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+      />
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700"
+  >
+    Save personal info
+  </button>
+</form>
