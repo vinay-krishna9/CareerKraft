@@ -1,6 +1,6 @@
 # CareerKraft
 
-CareerKraft is an enterprise-style resume and cover letter builder built with Angular, NgRx, Node.js, PostgreSQL, and Prisma.
+CareerKraft is a resume and cover letter builder built with Angular, NgRx, Node.js, PostgreSQL, and Prisma.
 
 ## Goal
 
