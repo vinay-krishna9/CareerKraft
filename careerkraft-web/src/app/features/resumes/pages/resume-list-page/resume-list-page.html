@@ -1,3 +1,29 @@
-<button (click)="modal.open()">New Resume</button>
+<div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <app-document-tile title="Create new resume" variant="dashed" (click)="modal.open()">
+    <div
+      card-icon
+      class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-3xl"
+    >
+      +
+    </div>
+  </app-document-tile>
 
+  @for (resume of resumes; track resume.id) {
+    <app-document-tile [title]="resume.title" variant="solid">
+      <p class="mt-2 text-sm text-slate-500"></p>
+
+      <!-- TODO: add preview of resume -->
+      <div class="flex min-h-36 flex-col justify-between">
+        <div>
+          <p class="mt-2 text-sm text-slate-500">Last updated {{ resume.updatedAt }}</p>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between text-sm">
+          <span class="font-medium text-slate-700">Resume</span>
+          <span class="text-slate-400">Edit →</span>
+        </div>
+      </div>
+    </app-document-tile>
+  }
+</div>
 <app-personal-info-form></app-personal-info-form>
