@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { ResumeListPage } from './resume-list-page';
 
 describe('ResumeListPage', () => {
@@ -8,9 +8,9 @@ describe('ResumeListPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResumeListPage]
-    })
-    .compileComponents();
+      imports: [ResumeListPage],
+      providers: [provideZonelessChangeDetection()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ResumeListPage);
     component = fixture.componentInstance;

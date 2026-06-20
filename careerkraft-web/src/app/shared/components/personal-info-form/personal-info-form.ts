@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PersonalInfo } from '../../models/personal-info.model';
 
 @Component({
   selector: 'app-personal-info-form',
@@ -8,9 +9,11 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   styleUrl: './personal-info-form.scss',
 })
 export class PersonalInfoForm {
+  readonly formSubmitted = output<PersonalInfo>();
+
   private readonly fb = new FormBuilder();
 
-  readonly personalInfoForm = this.fb.group({
+  readonly personalInfoForm = this.fb.nonNullable.group({
     firstName: ['', [Validators.required, Validators.maxLength(50)]],
     lastName: ['', [Validators.required, Validators.maxLength(50)]],
     title: ['', [Validators.maxLength(100)]],
@@ -24,8 +27,12 @@ export class PersonalInfoForm {
   });
 
   onSubmit(): void {
-    if (this.personalInfoForm.valid) {
+    if (this.personalInfoForm.invalid) {
       console.log('Personal Info:', this.personalInfoForm.value);
+      this.personalInfoForm.markAllAsTouched();
+      return;
     }
+
+    this.formSubmitted.emit(this.personalInfoForm.getRawValue());
   }
 }
