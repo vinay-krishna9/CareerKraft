@@ -1,6 +1,7 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PersonalInfo } from '../../models/personal-info.model';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-personal-info-form',
@@ -10,6 +11,7 @@ import { PersonalInfo } from '../../models/personal-info.model';
 })
 export class PersonalInfoForm {
   readonly formSubmitted = output<PersonalInfo>();
+  modal = inject(ModalService);
 
   private readonly fb = new FormBuilder();
 

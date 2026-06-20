@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PersonalInfoForm } from '../../../../shared/components/personal-info-form/personal-info-form';
+import { ModalService } from '../../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-resume-list-page',
@@ -7,4 +8,6 @@ import { PersonalInfoForm } from '../../../../shared/components/personal-info-fo
   templateUrl: './resume-list-page.html',
   styleUrl: './resume-list-page.scss',
 })
-export class ResumeListPage {}
+export class ResumeListPage {
+  modal = inject(ModalService);
+}
