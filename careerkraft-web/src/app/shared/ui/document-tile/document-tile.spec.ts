@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 import { DocumentTile } from './document-tile';
 
@@ -8,11 +9,12 @@ describe('DocumentTile', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DocumentTile]
-    })
-    .compileComponents();
+      imports: [DocumentTile],
+      providers: [provideZonelessChangeDetection()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DocumentTile);
+    fixture.componentRef.setInput('title', 'Test title');
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

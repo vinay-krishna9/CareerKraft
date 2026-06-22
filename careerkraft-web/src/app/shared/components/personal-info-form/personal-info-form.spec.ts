@@ -89,4 +89,35 @@ describe('PersonalInfoForm', () => {
 
     expect(component.formSubmitted.emit).not.toHaveBeenCalled();
   });
+
+  it('should reset the form when cancelled', () => {
+    component.personalInfoForm.patchValue({
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'test@example.com',
+    });
+
+    component.onClose();
+
+    expect(component.personalInfoForm.getRawValue()).toEqual({
+      firstName: '',
+      lastName: '',
+      title: '',
+      email: '',
+      phone: '',
+      location: '',
+      linkedin: '',
+      portfolio: '',
+      xing: '',
+      github: '',
+    });
+  });
+
+  it('should not submit when cancel button is clicked', () => {
+    spyOn(component.formSubmitted, 'emit');
+
+    component.onClose();
+
+    expect(component.formSubmitted.emit).not.toHaveBeenCalled();
+  });
 });
