@@ -10,9 +10,9 @@ import { ModalService } from '../../services/modal.service';
   styleUrl: './personal-info-form.scss',
 })
 export class PersonalInfoForm {
-  readonly formSubmitted = output<PersonalInfo>();
   modal = inject(ModalService);
 
+  readonly formSubmitted = output<PersonalInfo>();
   private readonly fb = new FormBuilder();
 
   readonly personalInfoForm = this.fb.nonNullable.group({
@@ -30,7 +30,6 @@ export class PersonalInfoForm {
 
   onSubmit(): void {
     if (this.personalInfoForm.invalid) {
-      console.log('Personal Info:', this.personalInfoForm.value);
       this.personalInfoForm.markAllAsTouched();
       return;
     }

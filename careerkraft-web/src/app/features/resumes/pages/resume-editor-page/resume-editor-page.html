@@ -1,1 +1,3 @@
-<p>resume-editor-page works!</p>
+@if (currentResume(); as resume) {
+  <h1>{{ resume.personalInfo.firstName }}</h1>
+}
