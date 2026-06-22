@@ -37,4 +37,9 @@ export class PersonalInfoForm {
 
     this.formSubmitted.emit(this.personalInfoForm.getRawValue());
   }
+
+  onClose(): void {
+    this.personalInfoForm.reset();
+    this.modal.close();
+  }
 }

@@ -1,5 +1,5 @@
 @if (modal.isOpen()) {
-  <div class="overlay" (click)="modal.close()">
+  <div class="overlay" (click)="onClose()">
     <div class="modal" (click)="$event.stopPropagation()">
       <form
         class="space-y-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
@@ -105,12 +105,22 @@
           </label>
         </div>
 
-        <button
-          type="submit"
-          class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700"
-        >
-          Save personal info
-        </button>
+        <div class="flex items-center justify-end gap-4">
+          <button
+            type="button"
+            (click)="onClose()"
+            class="cursor-pointer rounded-lg bg-slate-200 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="cursor-pointer rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700"
+          >
+            Continue →
+          </button>
+        </div>
       </form>
     </div>
   </div>
