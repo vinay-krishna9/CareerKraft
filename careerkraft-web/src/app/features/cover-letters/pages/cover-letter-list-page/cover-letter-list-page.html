@@ -1,1 +1,28 @@
-<p>cover-letter-list-page works!</p>
+<div class="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  <app-document-tile title="Create new cover letter" variant="dashed" (click)="modal.open()">
+    <div
+      card-icon
+      class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-3xl"
+    >
+      +
+    </div>
+  </app-document-tile>
+
+  @for (coverLetter of coverLetters; track coverLetter.id) {
+    <app-document-tile [title]="coverLetter.title" variant="solid">
+      <!-- TODO: add preview of cover letter -->
+      <div class="flex min-h-36 flex-col justify-between">
+        <div>
+          <p class="mt-2 text-sm text-slate-500">Last updated {{ coverLetter.updatedAt }}</p>
+        </div>
+
+        <div class="mt-6 flex items-center justify-between text-sm">
+          <span class="font-medium text-slate-700">Cover Letter</span>
+          <span class="text-slate-400">Edit →</span>
+        </div>
+      </div>
+    </app-document-tile>
+  }
+</div>
+
+<app-personal-info-form (formSubmitted)="onPersonalInfoSubmitted($event)"></app-personal-info-form>
