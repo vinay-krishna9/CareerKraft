@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { Header } from './header';
-import { provideRouter } from '@angular/router';
+import { ResumeEditorPage } from './resume-editor-page';
 
-describe('Header', () => {
-  let component: Header;
-  let fixture: ComponentFixture<Header>;
+describe('ResumeEditorPage', () => {
+  let component: ResumeEditorPage;
+  let fixture: ComponentFixture<ResumeEditorPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header],
-      providers: [provideZonelessChangeDetection(), provideRouter([])],
+      imports: [ResumeEditorPage],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Header);
+    fixture = TestBed.createComponent(ResumeEditorPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
