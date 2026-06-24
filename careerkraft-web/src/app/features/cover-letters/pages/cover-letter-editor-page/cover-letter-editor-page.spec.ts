@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CoverLetterEditorPage } from './cover-letter-editor-page';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { ResumeEditorPage } from './resume-editor-page';
 import { provideMockStore } from '@ngrx/store/testing';
 
-describe('ResumeEditorPage', () => {
-  let component: ResumeEditorPage;
-  let fixture: ComponentFixture<ResumeEditorPage>;
+describe('CoverLetterEditorPage', () => {
+  let component: CoverLetterEditorPage;
+  let fixture: ComponentFixture<CoverLetterEditorPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ResumeEditorPage],
+      imports: [CoverLetterEditorPage],
       providers: [
         provideZonelessChangeDetection(),
         provideMockStore({
           initialState: {
-            resume: {
-              currentResume: null,
-              resumes: [],
+            coverLetter: {
+              currentCoverLetter: null,
+              coverLetters: [],
               loading: false,
             },
           },
@@ -24,7 +24,7 @@ describe('ResumeEditorPage', () => {
       ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ResumeEditorPage);
+    fixture = TestBed.createComponent(CoverLetterEditorPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

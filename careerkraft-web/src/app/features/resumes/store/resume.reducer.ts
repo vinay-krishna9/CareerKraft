@@ -5,14 +5,18 @@ import { ResumeActions } from './resume.actions';
 export const resumeReducer = createReducer(
   initialResumeState,
 
-  on(ResumeActions.createDraftResume, (state, { personalInfo }) => ({
-    ...state,
-    currentResume: {
-      id: crypto.randomUUID(),
-      title: 'Untitled Resume',
-      personalInfo,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    },
-  })),
+  on(ResumeActions.createDraftResume, (state, { personalInfo }) => {
+    const now = new Date().toISOString();
+
+    return {
+      ...state,
+      currentResume: {
+        id: crypto.randomUUID(),
+        title: 'Untitled Resume',
+        personalInfo,
+        createdAt: now,
+        updatedAt: now,
+      },
+    };
+  }),
 );

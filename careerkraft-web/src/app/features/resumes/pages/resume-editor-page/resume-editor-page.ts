@@ -10,7 +10,7 @@ import { selectCurrentResume } from '../../store/resume.selectors';
   styleUrl: './resume-editor-page.scss',
 })
 export class ResumeEditorPage {
-  private readonly store = inject(Store);
+  store = inject(Store);
 
   readonly currentResume = toSignal(this.store.select(selectCurrentResume), { initialValue: null });
 }
